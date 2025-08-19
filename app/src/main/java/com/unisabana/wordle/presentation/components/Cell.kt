@@ -42,27 +42,40 @@ fun Cell(character: String, blockType:CellType){
     }
 }
 
+@Composable
+fun RowCell (text:String){
+    Row{
+        for(c in text){
+            val color = checkColor('T', c.toString())
+            Cell(c.toString(),color )
+        }
+    }
+}
+
+@Composable
+fun Grid(solution: String, currentWord: String, attempts: List<String>) {
+    for(i in 0..6){
+        RowCell("     ")
+    }
+}
+
+fun checkColor(a:Char, b:String):CellType{
+    return CellType.GREEN
+}
+
 @Preview
 @Composable
 fun PreviewCellSuccess(){
     Column {
-        Row{
-            Cell("H", CellType.GREEN)
-            Cell("E", CellType.GREY)
-            Cell("L", CellType.YELLOW)
-            Cell("L", CellType.GREEN)
-            Cell("O", CellType.TRANSPARENT)
-        }
-
-        Row{
-            Cell(" ", CellType.TRANSPARENT)
-            Cell(" ", CellType.TRANSPARENT)
-            Cell(" ", CellType.TRANSPARENT)
-            Cell(" ", CellType.TRANSPARENT)
-            Cell(" ", CellType.TRANSPARENT)
-        }
+        RowCell("Hello")
+        RowCell("Hello")
+        RowCell("Hello")
+        RowCell("Hello")
+        RowCell("Hello")
     }
 }
+
+
 
 //
 //@Preview
