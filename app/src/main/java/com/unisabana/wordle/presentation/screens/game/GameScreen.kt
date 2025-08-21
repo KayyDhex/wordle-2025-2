@@ -36,9 +36,7 @@ fun GameScreen(navController: NavHostController, gameViewModel: GameViewModel = 
                 gameViewModel::onRemoveLetter,
                 gameViewModel::onKeyPressed
             )
-            Button({
-                navController.popBackStack()
-            }) {
+            Button(onClick = gameViewModel::onSubmit) {
                 Text("Back")
             }
         }

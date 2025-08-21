@@ -7,9 +7,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.unisabana.wordle.presentation.screens.game.GameViewModel
 
 @Composable
-fun ScoreScreen(onBack: () -> Unit) {
+fun ScoreScreen(onBack: () -> Unit, viewModel: GameViewModel) {
     Scaffold {
             innerPadding ->
         Column (
@@ -27,5 +28,5 @@ fun ScoreScreen(onBack: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewScoreScreen(){
-    ScoreScreen (onBack={})
+    ScoreScreen (onBack={}, viewModel = viewModel)
 }
